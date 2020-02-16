@@ -9,11 +9,7 @@ import ru.xpendence.modelmapperdemo.attributes.Color;
 import javax.persistence.*;
 import java.util.List;
 
-/**
- * Author: Vyacheslav Chernyshov
- * Date: 29.01.19
- * e-mail: 2262288@gmail.com
- */
+
 @Entity
 @Table(name = "unicorns")
 @EqualsAndHashCode(callSuper = false)

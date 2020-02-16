@@ -8,11 +8,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.List;
 
-/**
- * Author: Vyacheslav Chernyshov
- * Date: 29.01.19
- * e-mail: 2262288@gmail.com
- */
+
 @Setter
 @EqualsAndHashCode(callSuper = false)
 @Entity

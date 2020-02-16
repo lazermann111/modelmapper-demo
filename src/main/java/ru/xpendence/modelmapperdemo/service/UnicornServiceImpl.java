@@ -6,11 +6,7 @@ import ru.xpendence.modelmapperdemo.dto.UnicornDto;
 import ru.xpendence.modelmapperdemo.mapper.UnicornMapper;
 import ru.xpendence.modelmapperdemo.repository.UnicornRepository;
 
-/**
- * Author: Vyacheslav Chernyshov
- * Date: 01.02.19
- * e-mail: 2262288@gmail.com
- */
+
 @Service
 public class UnicornServiceImpl implements UnicornService {
 

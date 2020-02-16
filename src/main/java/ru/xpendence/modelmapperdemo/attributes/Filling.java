@@ -1,10 +1,6 @@
 package ru.xpendence.modelmapperdemo.attributes;
 
-/**
- * Author: Vyacheslav Chernyshov
- * Date: 29.01.19
- * e-mail: 2262288@gmail.com
- */
+
 public enum Filling {
     CHOCOLATE(0, "Chocolate"),
     CHERRY(1, "Cherry"),
