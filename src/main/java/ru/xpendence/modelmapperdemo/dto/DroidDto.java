@@ -15,7 +15,6 @@ import java.util.List;
 public class DroidDto extends AbstractDto {
 
     private String name;
-    private List<CupcakeDto> cupcakes;
     private Long unicornId;
     private Boolean alive;
 }

@@ -1,6 +1,7 @@
 package ru.xpendence.modelmapperdemo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 import ru.xpendence.modelmapperdemo.dto.UnicornDto;
 import ru.xpendence.modelmapperdemo.mapper.UnicornMapper;
@@ -26,6 +27,7 @@ public class UnicornServiceImpl implements UnicornService {
 
     @Override
     public UnicornDto get(Long id) {
-        return mapper.toDto(repository.getOne(id));
+        return mapper.toDto(repository.findById(id)
+				.orElseThrow(() -> new IllegalArgumentException("Unable to get entity from Database by id " + id)));
     }
 }

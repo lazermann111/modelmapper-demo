@@ -19,7 +19,6 @@ public class Droid extends AbstractEntity {
 
     private String name;
     private Unicorn unicorn;
-    private List<Cupcake> cupcakes;
     private Boolean alive;
 
     public Droid(String name, Unicorn unicorn, Boolean alive) {
@@ -42,11 +41,6 @@ public class Droid extends AbstractEntity {
     @JoinColumn(name = "unicorn_id")
     public Unicorn getUnicorn() {
         return unicorn;
-    }
-
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "droid")
-    public List<Cupcake> getCupcakes() {
-        return cupcakes;
     }
 
     @Column(name = "alive")
