@@ -10,9 +10,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class UnicornDto extends AbstractDto {
+public class CustomerDto extends AbstractDto {
 
     private String name;
-    private List<DroidDto> droids;
-    private String color;
+    private List<OrderDto> orders;
 }

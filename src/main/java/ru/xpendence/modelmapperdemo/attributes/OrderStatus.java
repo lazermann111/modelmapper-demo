@@ -1,7 +1,7 @@
 package ru.xpendence.modelmapperdemo.attributes;
 
 
-public enum Color {
+public enum OrderStatus {
     BLACK,
     WHITE,
     BLUE,

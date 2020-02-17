@@ -12,9 +12,8 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class DroidDto extends AbstractDto {
+public class OrderDto extends AbstractDto {
 
     private String name;
-    private Long unicornId;
-    private Boolean alive;
+    private Long customerId;
 }
