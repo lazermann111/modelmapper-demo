@@ -1,11 +1,11 @@
 package ru.xpendence.modelmapperdemo.service;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ru.xpendence.modelmapperdemo.dto.CustomerDto;
 import ru.xpendence.modelmapperdemo.entity.Customer;
-import ru.xpendence.modelmapperdemo.mapper.CustomerMapper;
 import ru.xpendence.modelmapperdemo.repository.CustomerRepository;
 
 
@@ -13,22 +13,21 @@ import ru.xpendence.modelmapperdemo.repository.CustomerRepository;
 public class CustomerServiceImpl implements CustomerService {
 
     private final CustomerRepository repository;
-    private final CustomerMapper mapper;
+    private final ModelMapper mapper;
 
     @Autowired
-    public CustomerServiceImpl(CustomerRepository repository, CustomerMapper mapper) {
+    public CustomerServiceImpl(CustomerRepository repository, ModelMapper mapper) {
         this.repository = repository;
         this.mapper = mapper;
     }
 
     @Override
-    public Customer save(Customer c) {
-        return repository.save(c);
+    public CustomerDto save(Customer c) {
+        return mapper.map(repository.save(c), CustomerDto.class);
     }
 
     @Override
-    public Customer get(Long id) {
-        return repository.findById(id)
-				.orElseThrow(() -> new IllegalArgumentException("Unable to get customer from Database by id " + id));
+    public CustomerDto get(Long id) {
+        return mapper.map(repository.findById(id).get(), CustomerDto.class);
     }
 }

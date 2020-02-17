@@ -5,7 +5,7 @@ import ru.xpendence.modelmapperdemo.entity.Customer;
 
 public interface CustomerService {
 
-    Customer save(Customer dto);
+	CustomerDto save(Customer dto);
 
-    Customer get(Long id);
+	CustomerDto get(Long id);
 }
