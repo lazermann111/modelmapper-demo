@@ -25,7 +25,7 @@ public class CustomerController {
 	}
 
 	@PostMapping
-	public ResponseEntity<CustomerDto> save(@RequestBody Customer customer) {
+	public ResponseEntity<CustomerDto> save(@RequestBody CustomerDto customer) {
 		return ResponseEntity.ok(service.save(customer));
 	}
 

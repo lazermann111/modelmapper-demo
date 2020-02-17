@@ -1,11 +1,11 @@
 package ru.xpendence.modelmapperdemo.service;
 
 import ru.xpendence.modelmapperdemo.dto.CustomerDto;
-import ru.xpendence.modelmapperdemo.entity.Customer;
+
 
 public interface CustomerService {
 
-	CustomerDto save(Customer dto);
+    CustomerDto save(CustomerDto dto);
 
-	CustomerDto get(Long id);
+    CustomerDto get(Long id);
 }
