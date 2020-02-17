@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ru.xpendence.modelmapperdemo.dto.CustomerDto;
+import ru.xpendence.modelmapperdemo.entity.Customer;
 import ru.xpendence.modelmapperdemo.mapper.CustomerMapper;
 import ru.xpendence.modelmapperdemo.repository.CustomerRepository;
 
@@ -21,13 +22,13 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public CustomerDto save(CustomerDto dto) {
-        return mapper.toDto(repository.save(mapper.toEntity(dto)));
+    public Customer save(Customer c) {
+        return repository.save(c);
     }
 
     @Override
-    public CustomerDto get(Long id) {
-        return mapper.toDto(repository.findById(id)
-				.orElseThrow(() -> new IllegalArgumentException("Unable to get customer from Database by id " + id)));
+    public Customer get(Long id) {
+        return repository.findById(id)
+				.orElseThrow(() -> new IllegalArgumentException("Unable to get customer from Database by id " + id));
     }
 }
