@@ -1,5 +1,6 @@
 package ru.xpendence.modelmapperdemo.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,16 +13,12 @@ import javax.persistence.*;
 @Entity
 @Table(name = "orders")
 @NoArgsConstructor
+@AllArgsConstructor
 public class Order extends AbstractEntity {
 
     private String name;
     private Customer customer;
 	private OrderStatus orderStatus;
-
-    public Order(String name, Customer customer) {
-        this.name = name;
-        this.customer = customer;
-    }
 
     @Column(name = "name")
     public String getName() {

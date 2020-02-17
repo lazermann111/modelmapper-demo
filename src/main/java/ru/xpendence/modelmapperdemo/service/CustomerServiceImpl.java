@@ -28,6 +28,6 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public CustomerDto get(Long id) {
         return mapper.toDto(repository.findById(id)
-				.orElseThrow(() -> new IllegalArgumentException("Unable to get entity from Database by id " + id)));
+				.orElseThrow(() -> new IllegalArgumentException("Unable to get customer from Database by id " + id)));
     }
 }

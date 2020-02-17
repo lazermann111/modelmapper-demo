@@ -21,10 +21,6 @@ public class Customer extends AbstractEntity {
     private String name;
     private List<Order> orders;
 
-    public Customer(String name, OrderStatus orderStatus) {
-        this.name = name;
-    }
-
     @Column(name = "name")
     public String getName() {
         return name;
