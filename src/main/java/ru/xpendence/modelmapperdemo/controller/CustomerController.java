@@ -25,13 +25,13 @@ public class CustomerController {
 	}
 
 	@PostMapping
-	public ResponseEntity<Customer> save(@RequestBody Customer customer) {
+	public ResponseEntity<CustomerDto> save(@RequestBody Customer customer) {
 		return ResponseEntity.ok(service.save(customer));
 	}
 
 	//todo show path/without path
 	@GetMapping(path = "/byId")
-	public ResponseEntity<Customer> get(@RequestParam Long id) { //todo show RequestParam/PathVariable
+	public ResponseEntity<CustomerDto> get(@RequestParam Long id) { //todo show RequestParam/PathVariable
 		return ResponseEntity.ok(service.get(id));
 	}
 }
