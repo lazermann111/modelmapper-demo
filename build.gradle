@@ -1,6 +1,7 @@
 buildscript {
     ext {
         springBootVersion = '2.1.2.RELEASE'
+        lombokVersion = "1.18.6"
     }
     repositories {
         mavenCentral()
@@ -43,4 +44,7 @@ dependencies {
 
     compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.9.7'
     compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jdk8', version: '2.9.7'
+    annotationProcessor(
+            "org.projectlombok:lombok:$lombokVersion"
+    )
 }
