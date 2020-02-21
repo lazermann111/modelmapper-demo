@@ -43,13 +43,13 @@ public class ModelmapperDemoApplication {
     @PostConstruct
 	private void populateDb()
 	{
+        for (int i = 0; i < 100; i++) {
+            Customer c = new Customer("Customer"+i, null);
+            Order o = new Order("Order"+i, c, OrderStatus.TODO);
+            c.setOrders(Collections.singletonList(o));
+            repository.save(c);
+        }
 
-		Customer c = new Customer("John", null);
-		Order o = new Order("Butter", c, OrderStatus.TODO);
-		c.setOrders(Collections.singletonList(o));
-
-
-		repository.save(c);
 	}
 
 }
