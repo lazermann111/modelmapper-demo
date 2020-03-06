@@ -1,4 +1,6 @@
-spring:
+app:
+  swagger:
+    exposeAPI: true
 management:
   security:
     enabled: false  # OK for DEV env only!
@@ -6,6 +8,7 @@ management:
     web:
       exposure:
         include: "*"
+spring:
   datasource:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:mem:db;DB_CLOSE_DELAY=-1
@@ -19,9 +22,3 @@ management:
     properties:
       hibernate.dialect: org.hibernate.dialect.H2Dialect
       hibernate.temp.use_jdbc_metadata_defaults: false
-
-  profiles:
-    active: dev
-
-server:
-  port: 8085
