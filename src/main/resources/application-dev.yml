@@ -2,7 +2,10 @@ spring:
 management:
   security:
     enabled: false  # OK for DEV env only!
-
+  endpoints:
+    web:
+      exposure:
+        include: "*"
   datasource:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:mem:db;DB_CLOSE_DELAY=-1
