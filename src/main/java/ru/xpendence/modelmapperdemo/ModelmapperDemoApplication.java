@@ -17,14 +17,24 @@ import ru.xpendence.modelmapperdemo.attributes.OrderStatus;
 import ru.xpendence.modelmapperdemo.entity.Customer;
 import ru.xpendence.modelmapperdemo.entity.Order;
 import ru.xpendence.modelmapperdemo.repository.CustomerRepository;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
+@EnableSwagger2
 public class ModelmapperDemoApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ModelmapperDemoApplication.class, args);
     }
-
+    @Bean
+    public Docket productApi() {
+        return new Docket(DocumentationType.SPRING_WEB).select()
+                .apis(RequestHandlerSelectors.basePackage("ru.xpendence.modelmapperdemo"))
+                .build();
+    }
     @Bean
     public ModelMapper modelMapper() {
         ModelMapper mapper = new ModelMapper();
