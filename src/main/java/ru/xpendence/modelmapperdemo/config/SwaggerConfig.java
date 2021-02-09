@@ -21,7 +21,7 @@ public class SwaggerConfig implements WebMvcConfigurer {
 
     @Bean
     public Docket api() {
-        return new Docket(DocumentationType.SPRING_WEB)
+        return new Docket(DocumentationType.SWAGGER_2)
                 .produces(Set.of(MediaType.APPLICATION_JSON_VALUE))
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("ru.xpendence.modelmapperdemo"))
