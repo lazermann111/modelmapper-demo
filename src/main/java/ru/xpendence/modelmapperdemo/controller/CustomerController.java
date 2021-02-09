@@ -1,5 +1,9 @@
 package ru.xpendence.modelmapperdemo.controller;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +28,12 @@ public class CustomerController {
 		this.service = service;
 	}
 
+	@ApiOperation(value = "Creates new customer")
+	@ApiResponses({
+			@ApiResponse(code = 201, message = "New customer was created",
+					response = CustomerDto.class),
+			@ApiResponse(code = 500, message = "Something wen wrong")
+	})
 	@PostMapping
 	public ResponseEntity<CustomerDto> save(@RequestBody CustomerDto customer) {
 		return ResponseEntity.ok(service.save(customer));
